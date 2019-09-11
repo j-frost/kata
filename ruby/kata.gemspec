@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Julian Felix Rost']
   spec.email         = ['j-frost+kata@a3re.net']
 
-  spec.summary       = 'Kata'
-  spec.description   = 'A place for stuff that happens when I kata'
+  spec.summary       = 'kata'
+  spec.description   = 'A place for stuff that happens when we kata'
   spec.homepage      = 'https://github.com/j-frost/kata'
   spec.license       = 'MIT'
 
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/j-frost/kata'
-  spec.metadata['changelog_uri'] = 'https://github.com/j-frost/kata/blob/master/CHANGELOG.md'
+  spec.metadata['changelog_uri'] = 'https://github.com/j-frost/kata/blob/master/README.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
