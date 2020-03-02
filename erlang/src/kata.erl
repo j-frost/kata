@@ -1,6 +1,9 @@
 -module(kata).
 
--export([countdown/2]).
+-export([
+  countdown/2,
+  fizz_buzz/1
+]).
 
 -import(lists, [member/2]).
 
@@ -10,3 +13,16 @@ countdown(Target, NumList) ->
   case member(Target, NumList) of
     true -> Target
   end.
+
+fizz_buzz(N) when is_integer(N) ->
+  Result = if
+             (N rem 3 =/= 0) and (N rem 5 =/= 0) ->
+               N;
+             (N rem 3 =:= 0) and (N rem 5 =/= 0) ->
+               "fizz";
+             (N rem 3 =/= 0) and (N rem 5 =:= 0) ->
+               "buzz";
+             (N rem 3 =:= 0) and (N rem 5 =:= 0) ->
+               "fizzbuzz"
+           end,
+  Result.
