@@ -1,4 +1,4 @@
-A Python Package called ``kata``
+A Python Package Called ``kata``
 ================================
 A place for stuff that happens when we kata
 
