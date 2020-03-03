@@ -12,12 +12,14 @@ countdown_test_ignore() ->
 
 fizz_buzz_test_() ->
   [
-    {"1 -> 1", ?_assertEqual(1, fizz_buzz(1))},
-    {"2 -> 2", ?_assertEqual(2, fizz_buzz(2))},
-    {"3 -> fizz", ?_assertEqual("fizz", fizz_buzz(3))},
-    {"4 -> 4", ?_assertEqual(4, fizz_buzz(4))},
-    {"5 -> buzz", ?_assertEqual("buzz", fizz_buzz(5))},
-    {"15 -> fizzbuzz", ?_assertEqual("fizzbuzz", fizz_buzz(15))},
-    {"0.1 -> error", ?_assertError(function_clause, fizz_buzz(0.1))},
-    {"a -> error", ?_assertError(function_clause, fizz_buzz(a))}
+    ?_assertEqual(1, fizz_buzz(1)),
+    ?_assertEqual(2, fizz_buzz(2)),
+    ?_assertEqual("fizz", fizz_buzz(3)),
+    ?_assertEqual(4, fizz_buzz(4)),
+    ?_assertEqual("buzz", fizz_buzz(5)),
+    ?_assertEqual("fizzbuzz", fizz_buzz(15)),
+    ?_assertError(_, fizz_buzz(0.1)),
+    ?_assertError(_, fizz_buzz(foo)),
+    ?_assertError(_, fizz_buzz(<<42>>)),
+    ?_assertError(_, fizz_buzz("foo"))
   ].
