@@ -1,14 +1,22 @@
 {
-  "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "build",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "ESNext",
     "typeRoots": [
       "./node_modules/@types"
     ]
   },
   "include": [
-    "src/**/*.ts",
-    "test/**/*.test.ts"
+    "src/**/*",
+    ".eslintrc.js",
+    ".prettierrc.js"
   ]
 }
