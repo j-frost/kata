@@ -1,23 +1,50 @@
 export class SinglyLinkedList {
-    private size = 0;
-
-    get length(): number {
-        return this.size;
+    constructor(start?: SinglyLinkedNode) {
+        this._start = start ?? null;
+        this._length = start ? 1 : 0;
     }
 
-    append(_node: SinglyLinkedNode): void {
-        this.size++;
+    private _start: SinglyLinkedNode | null;
+
+    get start(): SinglyLinkedNode | null {
+        return this._start;
+    }
+
+    private _length: number;
+
+    get length(): number {
+        return this._length;
+    }
+
+    append(node: SinglyLinkedNode): void {
+        if (this._start === null) {
+            this._start = node;
+        } else {
+            this._start.next = node;
+        }
+        this._length++;
     }
 }
 
 export class SinglyLinkedNode {
-    constructor(private stringValue: string, private nextNode: SinglyLinkedNode | null = null) {}
+    private readonly _value: string;
 
-    get value(): string {
-        return this.stringValue;
+    constructor(value: string, next?: SinglyLinkedNode) {
+        this._value = value;
+        this._next = next ?? null;
     }
 
+    private _next: SinglyLinkedNode | null;
+
     get next(): SinglyLinkedNode | null {
-        return this.nextNode;
+        return this._next;
+    }
+
+    set next(other: SinglyLinkedNode | null) {
+        this._next = other;
+    }
+
+    get value(): string {
+        return this._value;
     }
 }
